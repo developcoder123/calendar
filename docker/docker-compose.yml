@@ -10,7 +10,7 @@ services:
     ports:
       - '5174:5173'
     volumes:
-      - ../myCalendar:/usr/src/app/calendar
+      - ../app:/usr/src/app/calendar
     working_dir: "/usr/src/app/calendar"
     tty: true
     environment:
