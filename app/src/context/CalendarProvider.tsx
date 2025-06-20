@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { getStartOfMonth } from "../utils/dateUtils";
 
 type CalendarContextType = {
     selectedMonth: Date;
@@ -23,7 +24,7 @@ export const NextMonth = (current: Date) => {
 }
 
 export function CalendarProvider({children}: any) {
-    const [selectedMonth, setSelectedMonth] = useState<Date>(new Date());
+    const [selectedMonth, setSelectedMonth] = useState<Date>(getStartOfMonth(new Date()));
 
     return (
         <CalendarContext.Provider value={{selectedMonth, setSelectedMonth}}>
