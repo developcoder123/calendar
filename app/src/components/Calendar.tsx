@@ -1,11 +1,14 @@
+import { CalendarProvider } from "../context/CalendarProvider";
 import GridCalendar from "./GridCalendar/GridCalendar";
 import MonthCalendar from "./MonthCalendar/MonthCalendar";
 
 const Calendar: React.FC = () => {
     return (
         <>
-            <MonthCalendar />
-            <GridCalendar />
+            <CalendarProvider>
+                <MonthCalendar />
+                <GridCalendar />
+            </CalendarProvider>
         </>
     )
 };
