@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 import { getStartOfMonth } from "../utils/dateUtils";
+import { CalendarConfig } from "../config/calendarConfig";
+import { isSameDay } from "../utils/dateUtils";
 
 type CalendarContextType = {
     selectedMonth: Date;
@@ -10,18 +12,6 @@ export const CalendarContext = createContext<CalendarContextType>({
     selectedMonth: new Date(),
     setSelectedMonth: () => {},
 });
-
-export const PrevMonth = (current: Date) => {
-    const prev = new Date(current);
-    prev.setMonth(prev.getMonth() - 1);
-    return prev;
-}
-
-export const NextMonth = (current: Date) => {
-    const next = new Date(current);
-    next.setMonth(next.getMonth() + 1);
-    return next;
-}
 
 export function CalendarProvider({children}: any) {
     const [selectedMonth, setSelectedMonth] = useState<Date>(getStartOfMonth(new Date()));
