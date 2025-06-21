@@ -1,23 +1,21 @@
 import { createContext, useState } from "react";
 import { getStartOfMonth } from "../utils/dateUtils";
-import { CalendarConfig } from "../config/calendarConfig";
-import { isSameDay } from "../utils/dateUtils";
 
 type CalendarContextType = {
-    selectedMonth: Date;
-    setSelectedMonth: (date: Date) => void;
+    viewMonth: Date;
+    setViewMonth: (date: Date) => void;
 }
 
 export const CalendarContext = createContext<CalendarContextType>({
-    selectedMonth: new Date(),
-    setSelectedMonth: () => {},
+    viewMonth: new Date(),
+    setViewMonth: () => {},
 });
 
 export function CalendarProvider({children}: any) {
-    const [selectedMonth, setSelectedMonth] = useState<Date>(getStartOfMonth(new Date()));
+    const [viewMonth, setViewMonth] = useState<Date>(getStartOfMonth(new Date()));
 
     return (
-        <CalendarContext.Provider value={{selectedMonth, setSelectedMonth}}>
+        <CalendarContext.Provider value={{viewMonth, setViewMonth}}>
             {children}
         </CalendarContext.Provider>
     )

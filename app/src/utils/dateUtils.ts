@@ -7,6 +7,16 @@ export const getStartOfMonth = (date: Date) => {
     return new Date(date.getFullYear(), date.getMonth(), 1);
 };
 
+/**
+ * 引数の月末を返す関数
+ * @param date 
+ * @returns 
+ */
+export const getLastOfMonth = (date: Date) => {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+};
+
+
 
 /**
  * 2つのDate型が同じ年月日であるか比較する関数
