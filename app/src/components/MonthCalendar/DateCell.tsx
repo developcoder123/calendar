@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-import type { ReactElement, ReactNode } from "react";
 
 type Props = {
     date: Date,

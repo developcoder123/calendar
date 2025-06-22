@@ -9,9 +9,14 @@ export const generateCalendarDays = (date: Date): Date[] => {
 
     const startDayOfWeek = firstDay.getDay();
 
+    const offset = (startDayOfWeek - CalendarConfig.startDayOfWeek + 7) % 7;
+
+    const startDate = new Date(firstDay);
+    startDate.setDate(startDate.getDate() - offset);
+
     for(let i = 0; i < 42; i++) {
-        const date = new Date(firstDay);
-        date.setDate(i - startDayOfWeek + CalendarConfig.startDayOfWeek + 1);
+        const date = new Date(startDate);
+        date.setDate(startDate.getDate() + i);
         dates.push(date);
     }
 

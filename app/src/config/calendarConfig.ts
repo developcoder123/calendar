@@ -5,7 +5,7 @@ const startDayOfWeek = 1; // 0 = 日曜, 1 = 月曜
 const minTargetYear = 2025;
 const minTargetMonth = 1;
 const maxTargetYear = 2025;
-const maxTargetMonth = 12;
+const maxTargetMonth = 10;
 const dayLabels = ["日", "月", "火", "水", "木", "金", "土"];
 
 export interface CalendarConfigType {

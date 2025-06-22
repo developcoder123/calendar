@@ -44,7 +44,7 @@ const MonthCalendarNavigator: React.FC = () => {
                     className={`p-2 rounded w-20 m-2 ${
                         isPrevDisabled ? "bg-gray-300 text-gray-500 cursor-not-allowed" : "bg-blue-500 text-white"
                       }`}>
-                    ＜ 
+                    ＜
             </button>
 
             <button type="button" 
@@ -52,10 +52,10 @@ const MonthCalendarNavigator: React.FC = () => {
                     className={`px-3 rounded w-20 m-2 ${
                         isNextDisabled ? "bg-gray-300 text-gray-500 cursor-not-allowed" : "bg-blue-500 text-white"
                       }`}>
-                     ＞
+                    ＞
             </button>
 
-            <div className="p-3 m-2">
+            <div className="p-2 m-2">
                 <span className="text-lg">{viewMonth.getFullYear()}年 {viewMonth.getMonth()+1}月</span>
             </div>
 
